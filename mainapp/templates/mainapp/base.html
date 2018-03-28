@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Родительский тайтл
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="/static/css/normalize.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="/static/img/favicon.ico">
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container clr">
+        {% block back_type %}
+        <div class="hero-back">
+        {% endblock %}
+            {% block top_menu %}
+                <header>
+                    {% include 'mainapp/includes/inc__top_menu.html' %}
+                </header>
+            {% endblock %}
+
+            {% block wrapper %}
+
+            {% endblock %}
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+    </div> <!-- ====== CONTAINER END ====== -->
+    <footer>
+        {% block footer %}
+        <div class="info">
+            <div class="contact_us">
+                <a href="/contact/"><h4>Contact Us</h4></a>
+                <p>132A Bridge Road Richmond VIC Australia.</p>
+                <p>Talk to us on 1300 132
+                <a href="mailto:info&@interior.com">info&#64;interior.com</a></p>
+            </div>
+            <div class="useful">
+                <h4>Useful Information</h4>
+                <div>
+                    <a href="">Sales terms</a>
+                    <a href="">Customer care</a>
+                    <a href="">Delivery</a>
+                </div>
+                <div>
+                    <a href="">Architect accounts</a>
+                    <a href="">Careers</a>
+                    <a href="">Exchanges &amp; returns</a>
+                </div>
+            </div>
+            <div class="subscribe">
+                <h4>Let’s Stay in Touch!</h4>
+                <p>Suscribe to know about our latest news, products and special offers just for suscribers.</p>
+                <form class="email" action="" method="post">
+                    <input type="email" placeholder="your email address">
+                    <div class="but">
+                        <img src="/static/img/send.png" alt="">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright - INTERIOR 2016. All Rights Reserved.</p>
+            <div class="icon_soc">
+                <a href="https://www.facebook.com/" target="_blank"><img src="/static/img/facebook.png" alt=""></a>
+                <a href="https://twitter.com/" target="_blank"><img src="/static/img/twitter.png" alt=""></a>
+                <a href="https://plus.google.com/" target="_blank"><img src="/static/img/google.png" alt=""></a>
+                <a href="https://www.pinterest.com/" target="_blank"><img src="/static/img/pinterest.png" alt=""></a>
+            </div>
+            <p>Terms &amp; Conditions  /  Privacy policy &amp; Cookies</p>
+        </div>
+        {% endblock %}
+    </footer> <!-- ====== FOTER END ====== -->
+</body>
+</html>

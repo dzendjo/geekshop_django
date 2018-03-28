@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<a class="logo" href="{% url 'main' %}"><img src="{% static '/img/logo.png' %}" alt="logo"></a>
+<a class="search" href="#"><img src="{% static '/img/search.png' %}" alt=""></a>
+<input class="search_input" type="search" placeholder="Поиск">
+<ul class="menu">
+    {% for link in top_menu %}
+        <li>
+            <a href="{% url link.url %}"
+                {% if request.resolver_match.url_name == link.url %}
+                   class="click"
+                {% endif %}
+            >{{ link.text }}</a></li>
+    {% endfor %}
+    <!--<li><a class="click" href="{% url 'products:index' %}">PRODUCTS</a></li>-->
+    <!--<li><a href="{% url 'contact' %}">CONTACT</a></li>-->
+</ul>

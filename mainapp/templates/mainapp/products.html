@@ -1,0 +1,66 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    {{ block.super }}- {{ title }}
+{% endblock %}
+{% block wrapper %}
+    <div class="h2">Our Products Range on {{ date }}</div>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="product_header">
+            <ul class="menu_content text_style_1">
+                {% for product in products %}
+                    <li><a href="#">
+                        {{product.name}}
+                    </a></li>
+                {% endfor %}
+
+                <!--<li><a class="click" href="#">HOME</a></li>-->
+                <!--<li><a href="">OFFICE</a></li>-->
+                <!--<li><a href="">FURNITURE</a></li>-->
+                <!--<li><a href="">MODERN</a></li>-->
+                <!--<li><a href="">CLASSIC</a></li>-->
+            </ul>
+            <a class="explore" href="#">explore all<img src="{% static '/img/arrow.png' %}" alt=""></a>
+        </div>
+             <div class="pic prod">
+                <a href="#"><img src="{% static '/img/product-11.jpg' %}" alt=""></a>
+                <a href="product_detail.html"><img src="{% static '/img/slider1.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-31.jpg' %}" alt=""></a>
+
+                <a href="#"><img src="{% static '/img/product-41.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-5.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-6.jpg' %}" alt=""></a>
+
+                <a href="#"><img src="{% static '/img/product-11.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-21.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-31.jpg' %}" alt=""></a>
+
+                <a href="#"><img src="{% static '/img/product-41.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-5.jpg' %}" alt=""></a>
+                <a href="#"><img src="{% static '/img/product-6.jpg' %}" alt=""></a>
+            </div>
+            <p class="refresh_arrow">
+                <a href=""><img src="{% static '/img/refresh-arrows.png' %}" alt=""></a>
+            </p>
+        <div class="exclusive">
+            <div class="exclusive_left">
+                <div class="block_text_exclusive">
+                    <h3>exclusive</h3>
+                    <h2>Fishnet Chair</h2>
+                    <p>Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome.</p>
+                    <a class="button_order" href="#">Order Us<img src="{% static '/img/arrow.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="exclusive_right">
+                <div class="block_text_exclusive">
+                    <h3>exclusive</h3>
+                    <h2>Fishnet Chair</h2>
+                    <p>Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome.</p>
+                    <a class="button_order" href="#">Order Us<img src="{% static '/img/arrow.png' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
